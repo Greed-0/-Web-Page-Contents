@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Takip</title>
+    
+</head>
+<body>
+<div><br>Javascript<br>
+<br>Furkan<br>
+<br>Atasert<br>
+</div>
+<br><br><br>
+
+<div id="gezenalan"><img src="goz.jpg" width="100" height="100" style="border: none;" /></div>
+<script type="text/javascript" language="javascript">
+
+var alan = document.getElementById("gezenalan");
+alan.style.position = "absolute";
+window.onmousemove = function (event){
+    alan.style.left = event.clientX + -50 + "px";
+    alan.style.top = event.clientY + -50 + "px";
+
+}
+
+
+</script>
+</body>
+</html>

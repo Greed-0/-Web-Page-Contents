@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8;">
+    <title>Almanca İşlemi</title>
+    <style>
+        .buton{
+            background-color: black;
+            color:yellow;
+            font-weight: bold;
+            font-size: 23px;
+            text-align: center;
+            padding: 10px;
+            width: 300px;
+            height: 100px;
+        }
+        .buton:hover{
+            background-color: blue;
+            color: red;
+        }
+        body{
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+<button onclick="ornek()" class="buton">10 Almanca kelime çek</button>
+<br><br>
+<div id="detay"></div>
+<script type="text/javascript" language="javascript">
+
+function ornek(){
+    var istek = new XMLHttpRequest();
+    istek.onreadystatechange = function(){    
+        var dosyaIcerigi = this.responseText;
+        var kelimeler = dosyaIcerigi.split(" " && ".");
+        var rastgeleKelimeler = [];
+        for (var i = 0; i < 10; i++) {
+          var rastgeleIndex = Math.floor(Math.random() * kelimeler.length);
+          rastgeleKelimeler.push(kelimeler[rastgeleIndex]);
+        }
+        var rastgeleKelimeStringi = rastgeleKelimeler.join(" <br /> ");
+        document.getElementById("detay").innerHTML = rastgeleKelimeStringi;
+        
+    }
+    istek.open("GET","Almanca.txt",true);
+    istek.send();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitim</title>
+</head>
+<button onclick="ornek()">Ders İçerikleri İçin Tıklayınız</button>
+<br><br>
+<div id="sonuc">Ders İçerikleri İçin Butona Tıklayınız</div>
+<body>
+    <script>
+    function ornek(){
+        var istek = new XMLHttpRequest();
+        istek.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                var jsondeger = JSON.parse(this.responseText);
+                var metin     = "";
+                var setdegeri = jsondeger.setler;
+                var setuzunlugu = setdegeri.length;
+                    for(var baslangic = 0; baslangic < setuzunlugu; baslangic++){
+                        metin += "Eğitim Seti Adı: "+ setdegeri[baslangic].icerik + "<br />Eğitimci: " + setdegeri[baslangic].egitmen + "<br />Fiyat: " + setdegeri[baslangic].fiyat +"<br /><br /><br />" 
+                    }
+                    document.getElementById("sonuc").innerHTML = metin;
+            }else{
+                document.getElementById("sonuc").innerHTML = "Bilinmeyen Bir Hata Oluştu !"
+            }
+        };
+        istek.open("GET","icerik.json",true);
+        istek.send();
+    }
+</script>
+</body>
+</html>

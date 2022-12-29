@@ -1,0 +1,39 @@
+{
+    "setler":[
+        {
+            "icerik":"Javascript Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Html Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Css Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Php Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Mysql Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Java Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        },
+        {
+            "icerik":"Python Eğitim Seti",
+            "egitmen":"Furkan",
+            "fiyat":"Ücretsiz"
+        }
+    ]
+}
